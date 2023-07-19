@@ -44,7 +44,23 @@
             return $stmt->fetchAll(PDO::FETCH_ASSOC);
         }
 
-        
+        function excluirTarefas($id)
+        {
+            global $conexao;
+            $sql = "DELETE FROM tasks WHERE id=:id";
+            $stmt = $conexao->prepare($sql);
+            $stmt->bindParam(":id", $id);
+            $stmt->execute();
+        }
+
+        function modificarStatusTarefas($id, $completed)
+        {
+            global $conexao;
+            $sql = "UPDATE tasks SET completed= :completed WHERE id=:id";
+            $stmt = $conexao->prepare($sql);
+            $stmt->bindParam(":id", $id);
+            $stmt->execute();
+        }
 
 
     ?>
