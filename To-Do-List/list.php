@@ -56,9 +56,10 @@
         function modificarStatusTarefas($id, $completed)
         {
             global $conexao;
-            $sql = "UPDATE tasks SET completed= :completed WHERE id=:id";
+            $sql = "UPDATE tasks SET completed = :completed WHERE id=:id";
             $stmt = $conexao->prepare($sql);
             $stmt->bindParam(":id", $id);
+            $stmt->bindParam(":completed", $completed, PDO::PARAM_BOOL);
             $stmt->execute();
         }
 
