@@ -39,14 +39,6 @@ function adicionarLivro($titulo, $autor, $ano_publicado)
 
 
 
-
-
-
-
-
-
-
-
 function adicionar_muitos_livros()
 {
     $livros = array(
