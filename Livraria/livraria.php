@@ -30,6 +30,40 @@ function adicionarLivro($titulo, $autor, $ano_publicado)
     $stmt->execute();
 }
 
+function listarLivros()
+{
+    $conexao = conectar_se();
+    $sql = "SELECT * FROM livros";
+    $stmt = $conexao->prepare($sql);
+    $stmt->execute();
+
+    return $stmt->fetchAll(PDO::FETCH_ASSOC);
+}
+
+function atualizarLivro($id, $titulo, $autor, $ano_publicado)
+{
+    $conexao = conectar_se();
+    $sql = "UPDATE livros SET titulo=:titulo, autor=:autor, ano_publicado=:ano_publicado WHERE id=:id";
+
+    $stmt = $conexao->prepare($sql);
+    $stmt->bindParam(":id", $id);
+    $stmt->bindParam(":titulo", $titulo);
+    $stmt->bindParam(":autor", $autor);
+    $stmt->bindParam(":ano_publicado", $ano_publicado);
+    $stmt->execute();
+}
+
+function excluirLivro($id)
+{
+    $conexao = conectar_se();
+
+    $sql="DELETE FROM livros WHERE id=:id";
+    $stmt = $conexao->prepare($sql);
+    $stmt->bindParam(":id", $id);
+    $stmt->execute();
+
+}
+
 
 
 
