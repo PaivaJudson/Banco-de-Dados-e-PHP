@@ -1,6 +1,5 @@
 <?php
 
-
 function conectar_se()
 {
     $host = "localhost";
@@ -14,7 +13,6 @@ function conectar_se()
     } catch (PDOException $e) {
         die("Erro: " . $e->getMessage());
     }
-
     return $conexao;
 }
 
@@ -61,7 +59,6 @@ function excluirLivro($id)
     $stmt = $conexao->prepare($sql);
     $stmt->bindParam(":id", $id);
     $stmt->execute();
-
 }
 
 
