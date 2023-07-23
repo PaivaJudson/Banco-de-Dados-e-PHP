@@ -10,8 +10,7 @@ if($_SERVER['REQUEST_METHOD'] === 'POST'){
     $usuario = new Usuario();
     $usuario->nome = $_POST['nome'];
     $usuario->email = $_POST['email'];
-    $usuario->senha = $_POST['senha'];
-
+    $usuario->senha = password_hash($_POST['senha'], PASSWORD_DEFAULT);
 
     $dao = new UsuarioDAO($conn);
     $dao->inserirUsuario($usuario);
