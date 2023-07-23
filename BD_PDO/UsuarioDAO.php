@@ -9,7 +9,7 @@ class UsuarioDAO{
         $this->conn = $conn;
     }
 
-    public inserirUsuario(Usuario $usuario){
+    public function inserirUsuario(Usuario $usuario){
         $sql = "INSERT INTO usuarios(nome, email, senha) VALUES ( ? , ? , ? )";
         $stmt = $this->conn->prepare($sql);
         $stmt->execute([$usuario->nome, $usuario->email, $usuario->senha]);
