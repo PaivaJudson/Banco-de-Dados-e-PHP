@@ -4,7 +4,6 @@ require_once 'conexao.php';
 require_once 'Usuario.php';
 require_once 'UsuarioDAO.php';
 
-
 if($_SERVER['REQUEST_METHOD'] === 'POST'){
     
     $usuario = new Usuario();
@@ -15,8 +14,6 @@ if($_SERVER['REQUEST_METHOD'] === 'POST'){
     $dao = new UsuarioDAO($conn);
     $dao->inserirUsuario($usuario);
 }
-
-
 
 ?>
 
