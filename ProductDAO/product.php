@@ -1,6 +1,6 @@
 <?php 
 
-class Produto{
+class Product{
 
     private $id;
     private $name;
@@ -15,6 +15,6 @@ class Produto{
         $this->price = $price;
     }
 
-    
+
 
 }
