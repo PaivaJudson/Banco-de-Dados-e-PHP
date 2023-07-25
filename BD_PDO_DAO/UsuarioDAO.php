@@ -14,6 +14,4 @@ class UsuarioDAO{
         $stmt = $this->conn->prepare($sql);
         $stmt->execute([$usuario->nome, $usuario->email, $usuario->senha]);
     }
-
-
 }
