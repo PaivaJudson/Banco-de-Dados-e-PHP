@@ -24,16 +24,24 @@ class SQLProductDAO implements ProductDAO{
 
     public function delete($id)
     {
-
+        $sql = "DELETE products WHERE id=?";
+        $stmt = $this->pdo->prepare($sql);
+        $stmt->execute([$id]);
     }
 
     public function get($id)
     {
-
+        $sql = "SELECT * FROM products WHERE id = ?";
+        $stmt = $this->pdo->prepare($sql);
+        $stmt->execute([$id]);
+        return $stmt->fetch(PDO::FETCH_ASSOC);
     }
 
     public function getAll()
     {
-
+        $sql = "SELECT * FROM products";
+        $stmt = $this->pdo->prepare($sql);
+        $stmt->execute();
+        return $stmt->fetchAll(PDO::FETCH_ASSOC);
     }
 }
