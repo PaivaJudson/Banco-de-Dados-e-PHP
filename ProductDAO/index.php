@@ -14,8 +14,20 @@ if(isset($_POST['submit']))
 
     $product = new Product($name, $description, $price);
     $productDAO->insert($product);
+
+
+    header("Location: index.php");
+    exit();
 }
 
+if(isset($_GET['delete']))
+{
+
+}
+
+
+
+$products = $productDAO->getAll();
 
 ?>
 
