@@ -17,7 +17,9 @@ class SQLProductDAO implements ProductDAO{
     }
 
     public function update(Product $product){
-
+        $sql = "UPDATE products SET name = ?, description = ?, price = ? WHERE id = ?";
+        $stmt = $this->pdo->prepare($sql);
+        $stmt->execute([$product->getName(), $product->getDescription(), $product->getPrice(), $product->getId()]);
     }
 
     public function delete($id)
