@@ -1,5 +1,7 @@
 <?php
 
+require_once 'ProductDAO.php';
+
 class SQLProductDAO implements ProductDAO{
 
     private $pdo;

@@ -1,5 +1,7 @@
 <?php
 
+require_once 'Product.php';
+
 interface ProductDAO {
     public function insert(Product $product);
     public function update(Product $product);
