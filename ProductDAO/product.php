@@ -1,4 +1,4 @@
-<?php 
+<?php
 
 class Product{
 
@@ -14,6 +14,9 @@ class Product{
         $this->description = $description;
         $this->price = $price;
     }
+
+    
+
 
 
 

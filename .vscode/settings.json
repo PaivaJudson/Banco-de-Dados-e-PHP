@@ -1,0 +1,36 @@
+{
+    "window.zoomLevel": 1.4,
+
+    "editor.formatOnSave": true,
+
+    "files.watcherExclude": {
+        "**/git/objects/**":true,
+        "**/git/subtree-cache/**":true,
+        "**/node_modules/*/**":true,
+        "**/.hg/store/**":true,
+        "**/vendor/**":true,
+        "**/.dart_tool": true
+    },
+
+    "files.exclude": {
+        "**/.classpath":true,
+        "**/.project":true,
+        "**/settings":true,
+        "**/factorypath":true,
+        "**/.git": true,
+        "**/.svn": true,
+        "**/.hg": true,
+        "**/CVS": true,
+        "**/.DS_Store": true,
+        "**/Thumbs.db": true
+    },
+
+    "php.suggest.basic": false,
+    "phpSniffer.run": "onType",
+    "phpSniffer.autoDetect": true,
+    "phpSniffer.standard": "PSR12",
+    "[php]":{
+        "editor.defaultFormatter": "wongjn.php-sniffer"
+    }
+
+}
