@@ -12,9 +12,8 @@ class SQLProductDAO implements ProductDAO{
     {
         $sql = "INSERT INTO products(name, description, price) VALUES( ? , ? , ?)";
         $stmt = $this->pdo->prepare($sql);
-        $stmt->execute(
-            [$product]
-        );
+        $stmt->execute([$product->getName(), $product->getDescription(), $product->getPrice()]);
+        $product->setId($this->pdo->lastInsertId());
     }
 
     public function update(Product $product){
