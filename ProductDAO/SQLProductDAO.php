@@ -26,7 +26,7 @@ class SQLProductDAO implements ProductDAO{
 
     public function delete($id)
     {
-        $sql = "DELETE products WHERE id=?";
+        $sql = "DELETE FROM products WHERE id=?";
         $stmt = $this->pdo->prepare($sql);
         $stmt->execute([$id]);
     }

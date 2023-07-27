@@ -15,17 +15,20 @@ if(isset($_POST['submit']))
     $product = new Product($name, $description, $price);
     $productDAO->insert($product);
 
-
     header("Location: index.php");
     exit();
 }
 
+
+
 if(isset($_GET['delete']))
 {
+    $id = $_GET['delete'];
+    $productDAO->delete($id);
 
+    header("Location: index.php");
+    exit();
 }
-
-
 
 $products = $productDAO->getAll();
 
@@ -41,7 +44,7 @@ $products = $productDAO->getAll();
 
   <!-- Formulário para adicionar um novo produto -->
   <h2>Adicionar Produto</h2>
-  <form method="post">
+  <form method="GET">
     <label for="name">Nome:</label>
     <input type="text" name="name" required><br>
 
