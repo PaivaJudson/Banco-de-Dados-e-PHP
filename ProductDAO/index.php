@@ -30,6 +30,15 @@ if(isset($_GET['delete']))
     exit();
 }
 
+// if(isset($_GET['edit']))
+// {
+//     $id = $_GET['edit'];
+//     $productDAO->update($product);
+
+//     header("Location: index.php");
+//     exit();
+// }
+
 $products = $productDAO->getAll();
 
 ?>
